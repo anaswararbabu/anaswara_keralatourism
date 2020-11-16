@@ -1,0 +1,270 @@
+/*google font*/
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,800,900&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins',sans-serif;
+}
+.navbar{
+	position: fixed;
+	top: 0;
+	z-index: 99999;
+	padding:25px 0;
+}
+.navbar .logo{
+	font-size: 1.5em;
+	text-transform: uppercase;
+	font-weight: 750;
+	letter-spacing: 2px;
+}
+.navbar ul.nav{
+	margin-right: 5%;
+}
+.navbar ul.nav li.active,
+.navbar ul.nav li:hover{
+	background:rgba(255, 255, 255, 0.5);
+	color: #000;
+
+}
+.navbar ul.nav li a{
+	color: #fff;
+	font-size: 1em;
+	font-weight: 500;
+}
+.navbar ul.nav li.active a,
+.navbar ul.nav li:hover a{
+	color: #000;
+}
+
+/*slider*/
+#carouselExampleIndicators{
+	position: relative;
+	height: 100vh;
+	width: 100%;
+}
+#carouselExampleIndicators .carousel-inner{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background: #000;
+}
+#carouselExampleIndicators .carousel-inner:before{
+	position: absolute;
+	content: '';
+	background: rgba(0, 0, 0, 0.45);
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+}
+#carouselExampleIndicators .carousel-inner .carousel-item{
+	position: relative;
+	height: 100%;
+	width:100%;
+	background: url('http://www.assuredhospitality.com/wp-content/uploads/2020/02/kerala-tourism.jpg');
+	background-size: 100% 100%;
+	background-position: center;
+	background-attachment: fixed;
+}
+#carouselExampleIndicators .carousel-inner .carousel-item:nth-child(2){
+	background: url('https://www.traveldailymedia.com/assets/2017/09/kerala1.jpg');
+	background-size: 100% 100%;
+	background-position: center;
+	background-attachment: fixed;
+}
+#carouselExampleIndicators .carousel-inner .carousel-item:nth-child(3){
+	background: url('http://www.saffariaddict.com/wp-content/uploads/2018/06/kerala3.jpg');
+	background-size: 100% 100%;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+#carouselExampleIndicators .carousel-inner .carousel-item .info{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	height: auto;
+	width: 100%;
+	z-index: 1;
+	text-align: center;
+}
+#carouselExampleIndicators .carousel-inner .carousel-item h3{
+	height: auto;
+	color: #ccc;
+	width: 100%;
+	z-index: 1;
+	text-align: center;
+	font-size: 5.5em;
+	font-weight: 650;
+}
+
+#carouselExampleIndicators .carousel-inner .carousel-item h6{
+	height: auto;
+	color: #ccc;
+	width: 100%;
+	z-index: 1;
+	text-align: center;
+	font-size: 5.5em;
+    font-weight: 650;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+#carouselExampleIndicators .carousel-inner .carousel-item p{
+	height: auto;
+	color: #ccc;
+	width: 100%;
+	z-index: 1;
+	text-align: center;
+	font-size: 1.2em;
+	font-weight: 500;
+}
+/* login */
+
+
+body.login-page{
+background: url('https://wallpapercave.com/wp/oF2HsZd.jpg') #a07349  no-repeat;  
+  -webkit-background-size: cover; 
+background-size: cover;
+ height: 100vh; 
+/* background-position:center; */
+}
+.login-container{
+    position: relative;
+    top: 25%;
+    left: 20%;
+	 /* transform: translate(-50%,-50%);        */
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 8%;
+}
+
+/* login */
+
+/* signup */
+*{ 
+	margin: 0px; 
+	padding: 0px; 
+} 
+
+body.signup-page{ 
+	background-image:url("https://wallpapercave.com/wp/wp2649828.jpg"); 
+	 background-size: cover;
+   background-attachment: fixed;
+	 font-family: 'Times New Roman', Times, serif; */ 
+
+}
+
+h1{
+	font-style: italic;
+   font-size: 40px;
+   color:antiquewhite;
+   margin-top: 150px;
+   animation-duration: 8s;
+   animation-name: blink;
+   animation-iteration-count: infinite;
+   animation-direction: alternate;
+}
+@keyframes blink{
+	from{
+	
+		opacity: 1;
+	}
+	to{
+		
+		opacity: 0;
+	}
+}
+p{
+   font-size: 17px;
+   color: antiquewhite;
+  text-align:center;
+  animation-duration: 8s;
+   animation-name: blink;
+   animation-iteration-count: infinite;
+   animation-direction: alternate;
+   font-style: italic;
+}
+@keyframes blink{
+	from{
+		
+		opacity: 1;
+	}
+	to{
+		
+		opacity: 0;
+	}
+}
+h3{
+   font-size: 25px;
+   color: white;
+   text-align: center;
+}
+.glyphicon-pencil{
+   font-size: 50px;
+   color: white;
+   float: right;
+}
+.col-md-5{
+   padding-right: 2px;
+   margin-top: 80px;
+   box-shadow: 1px 1px 60px 10px black;
+   background: rgba(0,0,0,0.4);
+}
+.label{
+   font-weight: normal;
+   margin-top: 15px;
+   color: white;
+   font-size: 18px;
+}
+
+.form-control{
+   background: transparent;
+   border-radius: 0px;
+   border: 0px;
+   border-bottom: 1px solid white;
+   font-size: 18px;
+   margin-top: 15px;
+   height: 40px;
+   color: white;
+}
+ 
+
+input[type="checkbox"]{
+   margin-top: 15px;
+   width: 15px;
+   height: 15px;
+}
+
+small{
+   font-size: 18px;
+   color: white;
+}
+
+input[type="radio"]{
+   margin-top: 22px;
+}
+
+option{
+   color:black;
+}
+
+.btn-info{
+   margin-top: 20px;
+   font-size: 18px;
+   width: 120px;
+   margin-left: 80px;
+   margin-bottom: 20px;
+}
+
+.btn-warning{
+   margin-top: 20px;
+   font-size: 18px;
+   width: 120px;
+	margin-bottom: 20px;
+}
+/* signup */

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Kerala Tourism</title>
+	<!-- bootstrap cdn -->
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+	<!-- font awesome cdn -->
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<!-- style.css -->
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<!-- jquery cdn -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<!-- <link rel="stylesheet" href="stylee.css"> -->
+	<style>
+	
+#passwordStrength
+{
+height:10px;
+display:block;
+float:left;
+}
+.strength0
+{
+width:250px;
+background:none;
+}
+.strength1
+{
+width:50px;
+background:#ff0000;
+}
+.strength2
+{
+width:100px;
+background:#ff5f5f;
+}
+.strength3
+{
+width:150px;
+background:#56e500;
+}
+.strength4
+{
+background:#4dcd00;
+width:200px;
+}
+.strength5
+{
+background:#399800;
+width:250px;
+}
+
+	</style>
+</head>
+<body class="signup-page">
+	<div class="blink-bg">
+    <div class="container">
+		<!-- <div class="intro"> -->
+		<div class="row">
+            <div class="col-md-6">
+              <h1 class="text-left">Hey folks!!! SignUp here</h1>
+              <p class="text-left">Kerala, a state situated on the tropical Malabar Coast of southwestern India, is one of the most popular tourist destinations in the country. Named as one of the ten paradises of the world by National Geographic Traveler, Kerala is famous especially for its ecotourism initiatives and beautiful backwaters.</p>
+			</div>
+			<div class="col-md-5">
+		
+			<!-- make 2 col of 6 -->
+		
+			<div class="row">
+                <div class="col-md-6">
+					 <h3 class="text-left"><centre> SignUp Here</centre></h3><br>
+				</div>
+				<div class="col-md-6">
+					<span class="glyphicon-glyphicon-pencil"></span></div>
+				</div>
+				<!-- close -->
+				<!-- col for textbox and label -->
+
+
+				<form  class="login-form" onsubmit="return validate() || phonenumber() " >
+				<div class="row">
+					<label class="label-col-md-2 control-label">E-mailId</label>
+					<div class="col-md-10">
+						<input id="form-username"  class="form-control" name="Email" placeholder="E-mail" required>
+					</div>
+				</div>
+
+				<div class="row">
+					<label class="label-col-md-2 control-label">Phone Number</label>
+					<div class="col-md-10">
+						<input id="phn"  class="form-control"  name="phone" placeholder="phone" required>
+					</div>
+				</div>
+
+				
+				
+				
+				
+				 <div class="row">
+				 <label class="label-col-md-2 control-label">Password</label>
+				 <div class="col-md-10">
+					<input id="input" class="form-control" onkeyup="passwordStrength(this.value)"  type="password" name="password" placeholder="password" required />
+					<label for="passwordStrength">Password strength</label>
+					<div id="passwordDescription">Password not entered</div>
+	
+					 <div id="passwordStrength" class="strength0"></div>
+
+				</div>
+				</div>
+				
+				
+				<br>
+				
+				<div class="row">
+				<label class="label-col-md-2 control-label">Gender</label>
+					<div class="col-md-10">
+						<input id="gen" type="radio" name="gn" value="male"><small>Male</small>
+						<input id="gen" type="radio" name="gn" value="female"><small>Female</small>
+					</div>
+				</div>
+				<div class="row">
+				<label class="label-col-md-2 control-label">Country</label>
+					<div class="col-md-10">
+						<select class="form-control">
+							<option value="India" >India</option>
+							<option value="America">America</option>
+							<option value="Pakisthan">Pakisthan</option>
+							<option value="Srilanka">Srilanka</option>
+							<option value="China">China</option>
+						</select>
+					</div>
+				</div>
+				<br>
+				<!-- <a href="#"></a> <div class="btn btn-info"><button></button></div></a> -->
+				<a href="#"></a> <div class="btn btn-info" onclick="submit()">submit</div></a>
+				<a href="#"></a> <div class="btn btn-warning">Cancel</div></a>
+			</form>
+</div>
+	</div>
+
+
+	<script>
+		
+
+let error=document.getElementById("error");
+let email=document.getElementById("form-username");
+email.addEventListener("change",validate);
+let re=/^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/;
+var pno=document.getElementById("phn");
+pno.addEventListener("change",phonenumber);
+var rexp= /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+function phonenumber() {
+    
+    if(rexp.test(pno.value)) {
+      alert("Valid Phone number");
+    //  
+     error.innerHTML="valid"
+		error.style.color="green";
+		return true;
+    }
+    else {
+      alert("Invalid format");
+      error.innerHTML="invalid";
+		error.style.color="red";
+		return false;
+
+    }
+  }
+
+ function validate(){
+	
+	if(re.test(email.value)){
+		alert("valid emailid");
+		error.innerHTML="valid"
+		error.style.color="green";
+		return true;
+
+	}
+	else{
+		alert("Invalid format");
+		error.innerHTML="invalid";
+		error.style.color="red";
+		return false;
+
+	}
+}
+
+function passwordStrength(password)
+{ 
+var desc = new Array();
+desc[0] = "Very Weak";
+desc[1] = "Weak";
+desc[2] = "Better";
+desc[3] = "Medium";
+desc[4] = "Strong";
+desc[5] = "Strongest";
+var score = 0;
+//if password bigger than 6 give 1 point
+if (password.length > 6) score++;
+//if password has both lower and uppercase characters give 1 point
+if ( ( password.match(/[a-z]/) ) && ( password.match(/[A-Z]/) ) ) score++;
+//if password has at least one number give 1 point
+if (password.match(/\d+/)) score++;
+//if password has at least one special caracther give 1 point
+if ( password.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/) ) score++;
+//if password bigger than 12 give another 1 point
+if (password.length > 12) score++;
+document.getElementById("passwordDescription").innerHTML = desc[score]; 
+document.getElementById("passwordStrength").className = "strength" + score;
+}
+
+
+
+function submit(){
+	alert("SIGNUP SUCCESSFUL!!");
+}
+</script>
+
+</body>
+</html>
